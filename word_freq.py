@@ -3,9 +3,10 @@ import sys
 program_name = sys.argv[0]
 n = sys.argv[2]
 text = ""
-counts = []
+
 f = open(sys.argv[1], "rt")
 dic = dict()
+dic2 = dict()
 text = f.readline()
 while text:
     for c in text:
@@ -17,4 +18,5 @@ while text:
         else:
             dic[c] += 1
     text = f.readline()
+words = list(dic.keys())
 counts = list(dic.values())
