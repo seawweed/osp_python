@@ -3,7 +3,7 @@ import sys
 program_name = sys.argv[0]
 n = sys.argv[2]
 text = ""
-lines = []
+counts = []
 f = open(sys.argv[1], "rt")
 dic = dict()
 text = f.readline()
@@ -17,3 +17,4 @@ while text:
         else:
             dic[c] += 1
     text = f.readline()
+counts = list(dic.values())
