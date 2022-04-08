@@ -1,12 +1,20 @@
 import sys
-from collections import Counter
 
 program_name = sys.argv[0]
 n = sys.argv[2]
 text = ""
+lines = []
 f = open(sys.argv[1], "rt")
-dic = {}
+dic = dict()
 text = f.readline()
 while text:
-    print(text)
+    for c in text:
+        if c.isalpha() == False:
+            continue
+        c = c.lower()
+        if c not in dic:
+            dic[c] = 1
+        else:
+            dic[c] += 1
     text = f.readline()
+print(dic)
