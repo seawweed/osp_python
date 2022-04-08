@@ -8,10 +8,10 @@ f = open(sys.argv[1], "rt")
 dic = dict()
 dic2 = dict()
 text = f.readline()
+line = []
 while text:
-    for c in text:
-        if c.isalpha() == False:
-            continue
+    line = list(text.split())
+    for c in line:
         c = c.lower()
         if c not in dic:
             dic[c] = 1
@@ -20,9 +20,10 @@ while text:
     text = f.readline()
 words = list(dic.keys())
 counts = list(dic.values())
-print(words)
-print(counts)
+
 for i in range(len(words)):
     dic2[counts[i]] = words[i]
 
-print(dic2)
+counts.sort(reverse=True)
+for i in range(int(n)):
+    print("%-7s%7d" %(dic2[counts[i]], counts[i]))
