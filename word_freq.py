@@ -17,4 +17,3 @@ while text:
         else:
             dic[c] += 1
     text = f.readline()
-print(dic)
