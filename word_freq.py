@@ -20,3 +20,9 @@ while text:
     text = f.readline()
 words = list(dic.keys())
 counts = list(dic.values())
+print(words)
+print(counts)
+for i in range(len(words)):
+    dic2[counts[i]] = words[i]
+
+print(dic2)
