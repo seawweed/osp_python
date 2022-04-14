@@ -9,7 +9,9 @@ dic = dict()
 dic2 = dict()
 text = f.readline()
 line = []
+character = "\"';:/?.>,<]}[{=+-_)(*&^%$#@!~`"
 while text:
+    text = ''.join(x for x in text if x not in character)
     line = list(text.split())
     for c in line:
         c = c.lower()
